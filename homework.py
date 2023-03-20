@@ -43,7 +43,7 @@ class Training:
 
     def get_spent_calories(self) -> float:
         """Получить количество затраченных калорий."""
-        raise NotImplementedError('Ключ не найден в словаре.')
+        raise NotImplementedError('Невозможно обратиться напрямую.')
 
     def show_training_info(self) -> InfoMessage:
         """Вернуть информационное сообщение о выполненной тренировке."""
@@ -126,7 +126,7 @@ def read_package(workout_type: str, data: list) -> Training:
                'SWM': Swimming,
                'WLK': SportsWalking}
     if workout_type not in package:
-        raise NotImplementedError('Возможно выкинуть исключение')
+        raise NotImplementedError('Ключ не найден в словаре.')
     return package[workout_type](*data)
 
 
